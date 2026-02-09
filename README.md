@@ -74,12 +74,17 @@ Each node prints logs for:
 
 These logs are intentionally verbose to support debugging and traceability in a distributed environment.
 
-## Notes for Resume / Demo
-For a quick demo:
-1. Start 5 nodes (ports 5000–5004).
-2. Run `populate_fingers` on a node.
-3. `put` a key from one node and `get` it from another.
-4. Simulate failure with **Ctrl+C** on a node, then attempt lookups again after stabilization.
+## Demo Screenshots
+
+### PUT/GET across the ring
+![PUT/GET demo](Demo_Screenshots/5003_put_get.png)
+
+### Graceful leave with key transfer + ring update
+![Graceful leave demo](Demo_Screenshots/p4_graceful_leave.png)
+
+### Abrupt failure detection + repair (backup successor / stabilization)
+![Failure repair demo](Demo_Screenshots/p4_backup_successor.png)
+
 
 ## Future Improvements (optional)
 - Persistent storage (disk/DB) instead of in-memory
